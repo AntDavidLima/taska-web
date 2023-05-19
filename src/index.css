@@ -26,9 +26,6 @@ body {
   background-color: var(--gray-600);
   color: var(--gray-100);
 
-  max-width: 46rem;
-  margin: auto;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
