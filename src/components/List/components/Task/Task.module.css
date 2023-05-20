@@ -1,4 +1,33 @@
-.checkbox input {
+.container {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  border: 1px solid var(--gray-400);
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.container svg {
+  color: var(--gray-300);
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.container svg:hover {
+  color: var(--danger);
+  background-color: var(--gray-400);
+}
+
+.container input:checked ~ p {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -10,14 +39,15 @@
   border-width: 0;
 }
 
-.checkbox label {
+.checkbox + label {
   font-size: 1px;
   letter-spacing: -1px;
   color: transparent;
   cursor: pointer;
+  padding: 0.125rem;
 }
 
-.checkbox input + label::before {
+.checkbox + label::before {
   content: "";
   width: 1rem;
   height: 1rem;
@@ -25,9 +55,12 @@
   background-color: transparent;
   border: 2px solid var(--blue);
   display: inline-block;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
 }
 
-.checkbox input:checked + label::before {
+.checkbox:checked + label::before {
   background-color: var(--purple-dark);
   border-color: var(--purple-dark);
   background-image: url("./assets/white-check.svg");
@@ -35,15 +68,15 @@
   background-position: center;
 }
 
-.checkbox input:checked + label:hover::before,
-.checkbox input:checked:focus-visible + label::before {
+.checkbox:checked + label:hover::before,
+.checkbox:checked:focus-visible + label::before {
   background-color: var(--purple);
   border-color: var(--purple);
   background-image: url("./assets/white-check.svg");
 }
 
-.checkbox input + label:hover::before,
-.checkbox input:focus-visible + label::before {
+.checkbox + label:hover::before,
+.checkbox:focus-visible + label::before {
   background-color: rgb(var(--blue-dark-rgb), 0.2);
   border-color: var(--blue-dark);
   background-image: url("./assets/blue-check.svg");
@@ -51,6 +84,6 @@
   background-position: center;
 }
 
-.checkbox input:focus-visible + label::before {
+.checkbox:focus-visible + label::before {
   outline: auto;
 }
