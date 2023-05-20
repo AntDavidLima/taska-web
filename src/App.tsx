@@ -1,6 +1,7 @@
 import reactLogo from "./assets/logo.svg";
 import styles from "./App.module.css";
 import { PlusCircle } from "@phosphor-icons/react";
+import { List } from "./components/List/List";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               Concluídas <span>0</span>
             </p>
           </div>
+          <List />
         </section>
       </main>
     </>

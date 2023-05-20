@@ -1,8 +1,8 @@
 import { ClipboardText } from "@phosphor-icons/react";
 
-import styles from "./styles.module.css";
+import styles from "./Empty.module.css";
 
-export function Empty() {
+export function ListEmpty() {
   return (
     <div className={styles.container}>
       <ClipboardText size={56} className={styles.icon} />
