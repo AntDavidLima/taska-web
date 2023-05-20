@@ -6,6 +6,7 @@
   background-color: var(--gray-500);
   border-radius: 8px;
   padding: 1rem;
+  margin-top: 0.75rem;
 }
 
 .container svg {
@@ -20,6 +21,10 @@
 .container svg:hover {
   color: var(--danger);
   background-color: var(--gray-400);
+}
+
+.container p {
+  flex: 1;
 }
 
 .container input:checked ~ p {
@@ -44,7 +49,7 @@
   letter-spacing: -1px;
   color: transparent;
   cursor: pointer;
-  padding: 0.125rem;
+  padding: 0.1875rem;
 }
 
 .checkbox + label::before {
