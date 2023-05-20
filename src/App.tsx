@@ -40,10 +40,15 @@ function App() {
         <section>
           <div className={styles.listHeader}>
             <p>
-              Tarefas criadas <span>0</span>
+              Tarefas criadas <span>{tasks.length}</span>
             </p>
             <p>
-              Concluídas <span>0</span>
+              Concluídas{" "}
+              <span>
+                {tasks.length === 0
+                  ? 0
+                  : `${countDoneTasks()} de ${tasks.length}`}
+              </span>
             </p>
           </div>
           <List
@@ -55,6 +60,12 @@ function App() {
       </main>
     </>
   );
+
+  function countDoneTasks() {
+    const doneTasks = tasks.filter((t) => t.completed);
+
+    return doneTasks.length;
+  }
 
   function handleToggleTaskCompletion(taskId: number) {
     setTasks((current) =>
